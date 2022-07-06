@@ -5,14 +5,9 @@ namespace WebReader
 {
     public class Reader
     {
-        protected Guid Id { get; set; }
         protected String Text { get; set; }
 
-        public Reader(String text)
-        {
-            Id = Guid.NewGuid();
-            Text = text;
-        }
+        public Reader(String text) => Text = text;
 
         public void Print(IEnumerable<String> words, int timeRate)
         {

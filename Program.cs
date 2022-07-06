@@ -21,10 +21,6 @@ app.UseStaticFiles();
 
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
-
-app.MapControllers();
-
 app.MapGet("/read-text/", (String text) =>
 {
     var reader = new Reader(text);
