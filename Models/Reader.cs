@@ -20,7 +20,8 @@ namespace WebReader
                 Console.WriteLine($"{nextWord[i]}");
             }
 
-            Console.WriteLine("FIM!");
+            Thread.Sleep(timeRate);
+            Console.WriteLine("\nFIM!");
         }
         public IEnumerable<String> GetWords() => Regex.Split(Text, @"[^\w0-9-]+").Where(x => !String.IsNullOrWhiteSpace(x));
     }
