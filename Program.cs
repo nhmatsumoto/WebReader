@@ -1,3 +1,5 @@
+using WebReader;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Configura serviços
@@ -23,12 +25,11 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.MapGet("/read-text/", async (String text) =>
+app.MapGet("/read-text/", (String text) =>
 {
     var reader = new Reader(text);
     var words = reader.GetWords();
-    var result = await Reader.Print(words, 1000);
-    return result;
+    reader.Print(words, 1000);
 });
 
 app.Run();

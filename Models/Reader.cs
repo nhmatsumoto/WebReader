@@ -1,31 +1,35 @@
 using System;
 using System.Text.RegularExpressions;
-public class Reader
+
+namespace WebReader
 {
-    protected Guid Id { get; set; }
-    protected String Text { get; set; }
-
-    public Reader(String text)
+    public class Reader
     {
-        Id = Guid.NewGuid();
-        Text = text;
-    }
+        protected Guid Id { get; set; }
+        protected String Text { get; set; }
 
-    public static async Task Print(IEnumerable<String> words, int timeRate)
-    {
-        int counter = words.Count();
-        int index = 0;
-        string[] nextWord = words.ToArray();
-
-        while (counter < index)
+        public Reader(String text)
         {
-            Thread.Sleep(timeRate);
-            Console.WriteLine($"{nextWord[index]}");
-            index++;
+            Id = Guid.NewGuid();
+            Text = text;
         }
 
-        Console.WriteLine("FIM!");
-    }
-    public IEnumerable<String> GetWords() => Regex.Split(Text, @"[^\w0-9-]+").Where(x => !String.IsNullOrWhiteSpace(x));
+        public void Print(IEnumerable<String> words, int timeRate)
+        {
+            int counter = words.Count();
+            string[] nextWord = words.ToArray();
 
+            for (int i = 0; i <= counter - 1; i++)
+            {
+                Thread.Sleep(timeRate);
+                Console.WriteLine($"{nextWord[i]}");
+            }
+
+            Console.WriteLine("FIM!");
+        }
+        public IEnumerable<String> GetWords() => Regex.Split(Text, @"[^\w0-9-]+").Where(x => !String.IsNullOrWhiteSpace(x));
+    }
 }
+
+
+
