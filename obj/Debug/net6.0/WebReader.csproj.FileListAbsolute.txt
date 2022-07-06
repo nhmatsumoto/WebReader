@@ -19,3 +19,9 @@ C:\repositorio\reader\WebReader\obj\Debug\net6.0\refint\WebReader.dll
 C:\repositorio\reader\WebReader\obj\Debug\net6.0\WebReader.pdb
 C:\repositorio\reader\WebReader\obj\Debug\net6.0\WebReader.genruntimeconfig.cache
 C:\repositorio\reader\WebReader\obj\Debug\net6.0\ref\WebReader.dll
+C:\repositorio\reader\WebReader\obj\Debug\net6.0\WebReader.MvcApplicationPartsAssemblyInfo.cs
+C:\repositorio\reader\WebReader\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\repositorio\reader\WebReader\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\repositorio\reader\WebReader\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\repositorio\reader\WebReader\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\repositorio\reader\WebReader\obj\Debug\net6.0\WebReader.csproj.CopyComplete
