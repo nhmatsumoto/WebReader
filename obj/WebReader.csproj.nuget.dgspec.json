@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\repositorio\\reader\\WebReader\\WebReader.csproj": {}
+    "C:\\Repositorio\\reader\\WebReader\\WebReader.csproj": {}
   },
   "projects": {
-    "C:\\repositorio\\reader\\WebReader\\WebReader.csproj": {
+    "C:\\Repositorio\\reader\\WebReader\\WebReader.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\repositorio\\reader\\WebReader\\WebReader.csproj",
+        "projectUniqueName": "C:\\Repositorio\\reader\\WebReader\\WebReader.csproj",
         "projectName": "WebReader",
-        "projectPath": "C:\\repositorio\\reader\\WebReader\\WebReader.csproj",
+        "projectPath": "C:\\Repositorio\\reader\\WebReader\\WebReader.csproj",
         "packagesPath": "C:\\Users\\hiroy\\.nuget\\packages\\",
-        "outputPath": "C:\\repositorio\\reader\\WebReader\\obj\\",
+        "outputPath": "C:\\Repositorio\\reader\\WebReader\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hiroy\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,22 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.6, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.3.1, )"

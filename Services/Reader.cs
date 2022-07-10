@@ -1,7 +1,7 @@
 using System;
 using System.Text.RegularExpressions;
 
-namespace WebReader
+namespace Services.WebReader
 {
     public class Reader
     {
@@ -9,8 +9,9 @@ namespace WebReader
 
         public Reader(String text) => Text = text;
 
-        public void Print(IEnumerable<String> words, int timeRate)
+        public void Print(int timeRate)
         {
+            IEnumerable<String> words = GetWords();
             int counter = words.Count();
             string[] nextWord = words.ToArray();
 
@@ -23,7 +24,7 @@ namespace WebReader
             Thread.Sleep(timeRate);
             Console.WriteLine("\nFIM!");
         }
-        public IEnumerable<String> GetWords() => Regex.Split(Text, @"[^\w0-9-]+").Where(x => !String.IsNullOrWhiteSpace(x));
+        protected IEnumerable<String> GetWords() => Regex.Split(Text, @"[^\w0-9-]+").Where(x => !String.IsNullOrWhiteSpace(x));
     }
 }
 
