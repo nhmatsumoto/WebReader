@@ -32,8 +32,8 @@ var contact = new OpenApiContact()
 var info = new OpenApiInfo()
 {
     Version = "v1",
-    Title = "Minimal API - JWT Authentication with Swagger demo",
-    Description = "Implementing JWT Authentication in Minimal API",
+    Title = "WebReader demo",
+    Description = "WebReader is a software for making support to farmers",
     //TermsOfService = new Uri(""),
     Contact = contact
 };
