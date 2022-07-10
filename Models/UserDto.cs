@@ -1,4 +1,4 @@
 namespace WebReader.Models
 {
-    record UserDto(string UserName, string Password);
+    record UserDto(string email, string password);
 }

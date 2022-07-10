@@ -137,7 +137,7 @@ app.MapGet("/read-text/", (String text) =>
 app.MapPost("/security/getToken", [AllowAnonymous] (UserDto user) =>
 {
 
-    if (user.UserName == "admin@mohamadlawand.com" && user.Password == "P@ssword")
+    if (user.email == "admin" && user.password == "adminpassword")
     {
         var issuer = builder.Configuration["Jwt:Issuer"];
         var audience = builder.Configuration["Jwt:Audience"];
@@ -151,8 +151,8 @@ app.MapPost("/security/getToken", [AllowAnonymous] (UserDto user) =>
             Subject = new ClaimsIdentity(new[]
             {
                 new Claim("Id", "1"),
-                new Claim(JwtRegisteredClaimNames.Sub, user.UserName),
-                new Claim(JwtRegisteredClaimNames.Email, user.UserName),
+                new Claim(JwtRegisteredClaimNames.Sub, user.email),
+                new Claim(JwtRegisteredClaimNames.Email, user.email),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             }),
 

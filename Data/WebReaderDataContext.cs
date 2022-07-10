@@ -12,7 +12,9 @@ namespace Data
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(WebReaderDataContext).Assembly);
 
-            foreach (var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
+            foreach (var relationship in modelBuilder.Model
+                .GetEntityTypes()
+                .SelectMany(e => e.GetForeignKeys()))
             {
                 relationship.DeleteBehavior = DeleteBehavior.ClientSetNull;
             }
