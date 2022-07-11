@@ -97,7 +97,7 @@ app.MapPost("/climates", [Authorize] async (WebReaderDataContext db, Climate cli
 
     db.Climates.Add(climate);
     await db.SaveChangesAsync();
-    return Results.Created($"/Items/{climate.Id}", climate);
+    return Results.Created($"/climates/{climate.Id}", climate);
 });
 
 //UPDATE
