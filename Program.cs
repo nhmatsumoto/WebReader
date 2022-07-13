@@ -76,37 +76,37 @@ app.MapPost("/webreader/security/login", [AllowAnonymous] (UserDto user) =>
 //GET ALL CLIMATES
 app.MapGet("/climate/", [Authorize] async (WebReaderDataContext db) =>
 {
-    var climates = await db.Climates.ToListAsync();
+    var climates = await db.Temperatures.ToListAsync();
     return climates == null ? Results.NotFound() : Results.Ok(climates);
 });
 
 //GET CLIMATE BY ID
 app.MapGet("/climates/{id}", [Authorize] async (WebReaderDataContext db, Guid id) =>
 {
-    var climate = await db.Climates.FirstOrDefaultAsync(x => x.Id == id);
+    var climate = await db.Temperatures.FirstOrDefaultAsync(x => x.Id == id);
     return climate == null ? Results.NotFound() : Results.Ok(climate);
 });
 
 //INSERT NEW CLIMATE
-app.MapPost("/climates", [Authorize] async (WebReaderDataContext db, Climate climate) =>
+app.MapPost("/climates", [Authorize] async (WebReaderDataContext db, Temperature climate) =>
 {
-    if (await db.Climates.FirstOrDefaultAsync(x => x.Id == climate.Id) != null)
+    if (await db.Temperatures.FirstOrDefaultAsync(x => x.Id == climate.Id) != null)
     {
         return Results.BadRequest();
     }
 
-    db.Climates.Add(climate);
+    db.Temperatures.Add(climate);
     await db.SaveChangesAsync();
     return Results.Created($"/climates/{climate.Id}", climate);
 });
 
 //UPDATE
-app.MapPut("/climates/{id}", [Authorize] async (WebReaderDataContext db, Guid id, Climate climate) =>
+app.MapPut("/climates/{id}", [Authorize] async (WebReaderDataContext db, Guid id, Temperature climate) =>
 {
-    var existItem = await db.Climates.FirstOrDefaultAsync(x => x.Id == id);
+    var existItem = await db.Temperatures.FirstOrDefaultAsync(x => x.Id == id);
     if (existItem == null) return Results.BadRequest();
 
-    existItem.Temparature = climate.Temparature;
+    existItem.Data = climate.Data;
 
     await db.SaveChangesAsync();
     return Results.Ok(climate);
@@ -114,10 +114,10 @@ app.MapPut("/climates/{id}", [Authorize] async (WebReaderDataContext db, Guid id
 
 app.MapDelete("/climates/{id}", [Authorize] async (WebReaderDataContext db, Guid id) =>
 {
-    var existItem = await db.Climates.FirstOrDefaultAsync(x => x.Id == id);
+    var existItem = await db.Temperatures.FirstOrDefaultAsync(x => x.Id == id);
     if (existItem == null) return Results.BadRequest();
 
-    db.Climates.Remove(existItem);
+    db.Temperatures.Remove(existItem);
     await db.SaveChangesAsync();
     return Results.NoContent();
 });

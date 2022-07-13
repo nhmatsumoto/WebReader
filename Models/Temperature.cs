@@ -1,8 +1,8 @@
 namespace WebReader.Models
 {
-    public class Climate : Entity
+    public class Temperature : Entity
     {
-        public int Temparature { get; set; }
+        public int Data { get; set; }
         public DateTime Timestamp { get; set; }
     }
 }

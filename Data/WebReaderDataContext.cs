@@ -6,7 +6,7 @@ namespace Data
     public class WebReaderDataContext : DbContext
     {
         public WebReaderDataContext(DbContextOptions options) : base(options) { }
-        public DbSet<Climate> Climates { get; set; }
+        public DbSet<Temperature> Temperatures { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
