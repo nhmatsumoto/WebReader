@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Data",
+    "\\Data\\Context",
+    "\\Data\\Interfaces",
+    "\\Data\\Repository",
+    "\\Services",
+    "\\Services\\Temperature"
+  ],
+  "SelectedNode": "\\Data\\Repository\\TemperatureRepository.cs",
+  "PreviewInSolutionExplorer": false
+}

@@ -8,5 +8,11 @@ namespace WebReader.Services
     {
         // Add Logic to get data from temperature sensor here!
 
+        //timestamp : now
+        //delay
+        //target sensor : LM35
+        //type : Temperature
+        //accuracy:  0,5ºC
+        //data : 10mV / ºC
     }
 }

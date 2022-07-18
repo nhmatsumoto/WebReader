@@ -122,4 +122,9 @@ app.MapDelete("/climates/{id}", [Authorize] async (WebReaderDataContext db, Guid
     return Results.NoContent();
 });
 
+app.MapGet("Activity/Updates", [Authorize] async (WebReaderDataContext db) =>
+{
+    return Results.Ok();
+});
+
 app.Run();

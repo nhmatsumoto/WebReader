@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using WebReader.Models;
 
-namespace Data
+namespace Data.Context
 {
     public class WebReaderDataContext : DbContext
     {
